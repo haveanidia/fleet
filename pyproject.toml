@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleet-compiler"
+version = "0.9.5"
+description = "Compile heterogeneous LoRAs into hot-pluggable FleetAdapter experts for native FleetForCausalLM."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Fleet Compiler contributors" }
+]
+dependencies = [
+  "torch>=2.4",
+  "transformers>=5.0",
+  "peft>=0.20.0",
+  "accelerate>=1.0",
+  "bitsandbytes>=0.45",
+  "safetensors>=0.5",
+  "huggingface_hub>=0.30",
+  "pandas>=2.2,<3",
+]
+
+[project.optional-dependencies]
+server = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.34",
+  "pydantic>=2.10",
+]
+dev = [
+  "pytest>=8",
+  "ruff>=0.9",
+]
+
+[project.scripts]
+fleet = "fleet.cli:main"
+fleet-serve = "fleet.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

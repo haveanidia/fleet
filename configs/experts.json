@@ -1,0 +1,73 @@
+{
+  "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "policy": {
+    "canonical_rank": 32,
+    "min_structural_retention": 0.95,
+    "max_active_experts": 8,
+    "target_experts": 8,
+    "minimum_experts": 5,
+    "top_k": 2,
+    "router_temperature": 1.0,
+    "allow_unknown_license_local": false
+  },
+  "experts": [
+    {
+      "name": "math_reasoning",
+      "description": "Direct quantitative and arithmetic reasoning",
+      "candidates": [
+        "sinhal/qwen3-4b-instruct-2507-gsm8k-reasoning"
+      ]
+    },
+    {
+      "name": "medical_reasoning",
+      "description": "Biomedical and medical reasoning for education/research",
+      "candidates": [
+        "towardsinnovationlab/Qwen3-4B_Instruct-medical"
+      ]
+    },
+    {
+      "name": "legal_ops",
+      "description": "Narrow source-grounded contract/legal-operations extraction",
+      "candidates": [
+        "narcolepticchicken/qwen3-4b-legal-ops-contract-intake-lora"
+      ]
+    },
+    {
+      "name": "intent",
+      "description": "User-intent classification",
+      "candidates": [
+        "lituokobe/Qwen3-4B-Instruct-2507-LoRA-Intent-Classifier"
+      ]
+    },
+    {
+      "name": "agent",
+      "description": "Multi-turn agent trajectories, tool use and recovery",
+      "candidates": [
+        "yokobo-ai/qwen3-4b-agent-trajectory-lora-v6"
+      ]
+    },
+    {
+      "name": "function_calling",
+      "description": "Tool/function selection and structured arguments",
+      "candidates": [
+        "prabhu-nithin/qwen3-4b-xlam-function-calling-60k-lora"
+      ]
+    },
+    {
+      "name": "structured",
+      "description": "Strict JSON/YAML/XML/TOML/CSV structured output",
+      "candidates": [
+        "toru34/qwen3-4b-structured-output-lora",
+        "matsunya/Qwen3_4B_Instruct_2507",
+        "ryo-llm/qwen3-4b-structured-output-lora-202602072059"
+      ]
+    },
+    {
+      "name": "summary",
+      "description": "Summarization and compression",
+      "candidates": [
+        "ryanu/Qwen3-summary-lora"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "version": "0.7",
+  "policy": {
+    "anchor_token_window": 32,
+    "semantic_weight": 0.9,
+    "weight_weight": 0.1,
+    "prompt_prior_weight": 0.95,
+    "single_margin": 0.18,
+    "router_temperature": 0.7,
+    "score_clip": 3.0,
+    "minimum_calibration_gap": 0.02
+  },
+  "anchors": {
+    "math_reasoning": [
+      "Solve this quantitative word problem and give the numerical answer.",
+      "Work through this arithmetic problem carefully and report the result.",
+      "Solve this algebra equation directly with the required calculation.",
+      "Calculate this ratio or proportion problem and give the final value.",
+      "Reason through this probability question and produce the answer.",
+      "Solve this mathematics problem rather than tutoring the user."
+    ],
+    "medical_reasoning": [
+      "Explain this physiological mechanism accurately for education.",
+      "Reason through this biomedical question using medical knowledge.",
+      "Explain what this hormone, organ, or biological pathway does.",
+      "Describe the pathophysiology behind this medical concept.",
+      "Analyze this clinical-science scenario for educational purposes.",
+      "Answer this medical reasoning question without diagnosing a specific person."
+    ],
+    "legal_ops": [
+      "Extract the governing-law field from supplied contract text.",
+      "Classify this contract clause for a legal-operations workflow.",
+      "Extract requested contract metadata into compact structured fields.",
+      "Answer from the supplied agreement text and say when evidence is insufficient.",
+      "Identify contract parties, effective date, or clause type from source text.",
+      "Perform narrow legal-operations intake rather than giving legal advice."
+    ],
+    "intent": [
+      "Classify the user's intent into a concise category.",
+      "Identify the action requested in this customer message.",
+      "Determine whether the user wants to reschedule, cancel, buy, complain, or ask.",
+      "Label the conversational intent of this utterance.",
+      "Classify this support message by its requested action.",
+      "Return the intent category for this short user request."
+    ],
+    "agent": [
+      "Plan a sequence of actions and observations for an autonomous agent.",
+      "Decide what tool-using step should happen next and how to recover from failure.",
+      "Plan how to inspect, modify, test, and verify a software task.",
+      "Reason through a multi-step environment interaction with tool feedback.",
+      "Break this operational task into executable agent actions.",
+      "Plan an iterative debugging trajectory using observations and tools."
+    ],
+    "function_calling": [
+      "Choose the correct available function and produce its arguments.",
+      "Generate a tool call that matches the provided function schema.",
+      "Decide whether to call a tool and return the structured tool invocation.",
+      "Map this natural-language request into function name and JSON arguments.",
+      "Call the weather lookup tool with the correct city parameter.",
+      "Select the API function and fill its required arguments exactly."
+    ],
+    "structured": [
+      "Return valid JSON only using the requested keys.",
+      "Produce output that exactly matches the requested schema.",
+      "Convert the supplied information into strict YAML with required fields.",
+      "Return machine-readable XML without explanatory prose.",
+      "Format this result as a strict structured object.",
+      "Follow this JSON, YAML, XML, TOML, or CSV output contract exactly."
+    ],
+    "summary": [
+      "Summarize the supplied passage concisely.",
+      "Compress this long text into two sentences while preserving its main ideas.",
+      "Write a short factual summary of the supplied content.",
+      "Reduce this document to its essential points without adding information.",
+      "Produce a concise synopsis of this passage.",
+      "Summarize this material accurately and briefly."
+    ]
+  },
+  "null_anchors": [
+    "What is the capital of Japan?",
+    "What color is the sky on a clear day?",
+    "Who wrote Romeo and Juliet?",
+    "Tell me one interesting fact about bicycles.",
+    "What is the largest ocean on Earth?",
+    "Say hello in a friendly way.",
+    "Write a short paragraph about autumn.",
+    "Translate hello into Spanish.",
+    "Explain what a computer is.",
+    "Give me a simple dinner idea."
+  ]
+}

@@ -1,0 +1,23 @@
+services:
+  fleet:
+    build: .
+    command: ["fleet-serve", "--router", "semantic", "--bank", "/models/fleet-bank", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    environment:
+      FLEET_BANK_DIR: /models/fleet-bank
+      FLEET_LOAD_IN_4BIT: "1"
+      HF_HOME: /cache/huggingface
+    volumes:
+      - ./artifacts/fleet-bank:/models/fleet-bank:ro
+      - hf-cache:/cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  hf-cache:

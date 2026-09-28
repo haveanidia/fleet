@@ -1,0 +1,8 @@
+torch>=2.4
+transformers>=5.0
+peft>=0.20.0
+accelerate>=1.0
+bitsandbytes>=0.45
+safetensors>=0.5
+huggingface_hub>=0.30
+pandas>=2.2,<3
